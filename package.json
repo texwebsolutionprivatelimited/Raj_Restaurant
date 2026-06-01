@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev:frontend": "vite",
+    "dev:backend": "node --watch server.js",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "build": "vite build",
+    "start": "node server.js",
     "lint": "eslint ."
   },
   "dependencies": {
@@ -42,12 +44,14 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.1.1",
+    "cors": "^2.8.5",
     "date-fns": "4.1.0",
+    "dotenv": "^16.4.5",
     "embla-carousel-react": "8.6.0",
+    "express": "^4.21.1",
     "framer-motion": "^12.40.0",
     "input-otp": "1.4.2",
     "lucide-react": "^0.564.0",
-    "next": "16.2.6",
     "next-themes": "^0.4.6",
     "razorpay": "^2.9.6",
     "react": "^19",
@@ -55,6 +59,7 @@
     "react-dom": "^19",
     "react-hook-form": "^7.54.1",
     "react-resizable-panels": "^2.1.7",
+    "react-router-dom": "^6.28.0",
     "recharts": "2.15.0",
     "sonner": "^1.7.1",
     "tailwind-merge": "^3.3.1",
@@ -64,9 +69,12 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.0",
     "detype": "^3.0.0",
     "postcss": "^8.5",
     "tailwindcss": "^4.2.0",
-    "tw-animate-css": "1.3.3"
+    "tw-animate-css": "1.3.3",
+    "vite": "^6.0.3"
   }
 }
