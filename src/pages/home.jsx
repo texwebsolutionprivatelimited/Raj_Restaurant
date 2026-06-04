@@ -1,9 +1,12 @@
 import React from "react";
+import RoomsSection from "@/src/components/home/rooms-section";
+import QROrderSection from "@/src/components/home/qr-order-section";
+import AboutSection from "@/src/components/home/about-section";
 import ProductListing from "@/src/components/home/product-listing";
 import { Header } from "@/src/components/header";
 import { BannerSlider } from "@/src/components/banner-slider";
 import CategoriesSection from "@/src/components/home/categories-section";
-import TrendingSection from "@/src/components/home/trending-section";
+import EventsSection from "@/src/components/home/events-section";
 import StatsSection from "@/src/components/home/stats-section";
 import TestimonialsSection from "@/src/components/home/testimonials-section";
 import FeedbackCTA from "@/src/components/home/feedback-cta";
@@ -20,9 +23,12 @@ export default function Home() {
             <BannerSlider />
           </div>
         </section>
-        <ProductListing />
+        <AboutSection />
         <CategoriesSection />
-        <TrendingSection />
+        <ProductListing />
+        <EventsSection />
+        <QROrderSection />
+        <RoomsSection />
         <StatsSection />
         <TestimonialsSection />
         <FeedbackCTA />

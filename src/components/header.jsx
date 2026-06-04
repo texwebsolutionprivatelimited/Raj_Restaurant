@@ -46,6 +46,26 @@ export function Header() {
             <Link to="/" className="text-gray-300 hover:text-red-500 transition">
               Home
             </Link>
+            <button
+              onClick={() => {
+                document.getElementById("qr-order")?.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+              className="text-gray-300 hover:text-red-500 transition"
+            >
+              QR Order
+            </button>
+            <button
+              onClick={() => {
+                document.getElementById("rooms")?.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+              className="text-gray-300 hover:text-red-500 transition"
+            >
+              Rooms
+            </button>
             <Link to="/menu" className="text-gray-300 hover:text-red-500 transition">
               Menu
             </Link>
@@ -98,6 +118,7 @@ export function Header() {
             <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-white">
               {menuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
+
           </div>
         </div>
 
@@ -108,6 +129,27 @@ export function Header() {
               <Link to="/" className="text-gray-300 hover:text-red-500 transition">
                 Home
               </Link>
+              <button
+                onClick={() => {
+                  document.getElementById("qr-order")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                  setMenuOpen(false);
+                }}
+                className="text-left text-gray-300 hover:text-red-500 transition"
+              >
+                QR Order
+              </button>
+              <button
+                onClick={() => {
+                  document.getElementById("rooms")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+                className="text-gray-300 hover:text-red-500 transition"
+              >
+                Rooms
+              </button>
               <Link to="/menu" className="text-gray-300 hover:text-red-500 transition">
                 Menu
               </Link>

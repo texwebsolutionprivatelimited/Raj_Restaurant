@@ -37,8 +37,7 @@ export function BannerSlider() {
   };
 
   return (
-    <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[550px] overflow-hidden rounded-3xl">
-      {/* Slides */}
+<div className="relative w-full h-[500px] sm:h-[650px] lg:h-[850px] overflow-hidden rounded-3xl">      {/* Slides */}
       <AnimatePresence mode="sync">
         <motion.div
           key={currentIndex}
@@ -59,47 +58,62 @@ export function BannerSlider() {
           />
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black/45" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/75" />
 
           {/* Content */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-            <motion.h1
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 0.3,
-                duration: 0.8,
-              }}
-              className="text-white text-3xl sm:text-5xl lg:text-6xl font-bold max-w-4xl leading-tight"
-            >
-              {bannerImages[currentIndex].title}
-            </motion.h1>
+        {/* Content */}
+<div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-10 -mt-20">
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 0.5,
-                duration: 0.8,
-              }}
-              className="text-gray-200 text-lg mt-6 max-w-2xl"
-            >
-              Experience authentic flavors, premium dining, and unforgettable
-              moments at Raj Restaurant.
-            </motion.p>
+  <motion.span
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.2, duration: 0.8 }}
+    className="uppercase tracking-[8px] text-yellow-400 text-sm md:text-base font-semibold mb-2"
+  >
+    Welcome To
+  </motion.span>
 
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 0.7,
-                duration: 0.8,
-              }}
-              className="mt-8 bg-red-600 hover:bg-red-700 transition px-8 py-4 rounded-xl text-white font-semibold text-lg shadow-lg shadow-red-600/30"
-            >
-              Order Now
-            </motion.button>
-          </div>
+  <motion.h1
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.4, duration: 0.8 }}
+    className="font-black leading-[0.9]"
+  >
+    <span className="block text-white text-6xl sm:text-7xl md:text-8xl lg:text-[120px]">
+      RAJ
+    </span>
+
+    <span className="block bg-gradient-to-r from-yellow-300 via-yellow-500 to-amber-600 bg-clip-text text-transparent text-6xl sm:text-7xl md:text-8xl lg:text-[120px]">
+      RESTAURANT
+    </span>
+  </motion.h1>
+
+  <motion.p
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.6, duration: 0.8 }}
+    className="text-gray-200 text-base md:text-xl mt-5 max-w-3xl"
+  >
+    Experience authentic flavors, luxury dining, and unforgettable moments
+    crafted with passion and tradition.
+  </motion.p>
+
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.8, duration: 0.8 }}
+    className="flex flex-col sm:flex-row gap-4 mt-8"
+  >
+    <button className="bg-red-600 hover:bg-red-700 transition px-8 py-4 rounded-xl text-white font-semibold shadow-lg shadow-red-600/40">
+      Explore Menu
+    </button>
+
+    <button className="border border-yellow-500 text-yellow-400 hover:bg-yellow-500 hover:text-black transition px-8 py-4 rounded-xl font-semibold">
+      Book Table
+    </button>
+  </motion.div>
+
+</div>
         </motion.div>
       </AnimatePresence>
 

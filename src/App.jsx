@@ -1,4 +1,7 @@
 import React from "react";
+import RoomBookingPage from "./pages/room-booking";
+import ScrollToTop from "./components/ScrollToTop";
+import EventBooking from "./pages/event-booking";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
 import { CartProvider } from "@/src/context/cart-context";
@@ -12,11 +15,10 @@ import CheckoutPage from "@/src/pages/checkout.jsx";
 import ContactPage from "@/src/pages/contact.jsx";
 import MenuPage from "@/src/pages/menu.jsx";
 import OrderSuccessPage from "@/src/pages/order-success.jsx";
-import QrOrderPage from "@/src/pages/qr-order.jsx";
 import LoginPage from "@/src/pages/login.jsx";
 import SignupPage from "@/src/pages/signup.jsx";
 
-// Admin Pages - Add ALL these
+// Admin Pages
 import AdminLayout from "@/src/admin/adminLayout/AdminLayout";
 import Dashboard from "@/src/admin/adminPages/Dashboard.jsx";
 import Orders from "@/src/admin/adminPages/Orders.jsx";
@@ -27,10 +29,11 @@ import Inventory from "@/src/admin/adminPages/Inventory.jsx";
 import Categories from "@/src/admin/adminPages/Categories";
 import Payments from "@/src/admin/adminPages/Payments.jsx";
 import Offers from "@/src/admin/adminPages/Offers.jsx";
-
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
+
       <CartProvider>
         <Routes>
           {/* User Routes */}
@@ -41,13 +44,13 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/menu" element={<MenuPage />} />
           <Route path="/order-success" element={<OrderSuccessPage />} />
-          <Route path="/qr-order" element={<QrOrderPage />} />
           <Route path="/auth/login" element={<LoginPage />} />
           <Route path="/auth/signup" element={<SignupPage />} />
+          <Route path="/event-booking" element={<EventBooking />} />
+          <Route path="/room-booking" element={<RoomBookingPage />} />
 
-          {/* Admin Routes - ADD THESE */}
+          {/* Admin Routes */}
           <Route path="/admin" element={<AdminLayout />}>
-
             <Route index element={<Dashboard />} />
             <Route path="orders" element={<Orders />} />
             <Route path="bookings" element={<Bookings />} />
@@ -57,7 +60,6 @@ export default function App() {
             <Route path="categories" element={<Categories />} />
             <Route path="payments" element={<Payments />} />
             <Route path="offers" element={<Offers />} />
-
           </Route>
         </Routes>
 
