@@ -4,7 +4,7 @@ import { Toaster } from "sonner";
 import { CartProvider } from "@/src/context/cart-context";
 import "@/src/globals.css";
 
-// Import all application page views
+// User Pages
 import Home from "@/src/pages/home.jsx";
 import BookingsPage from "@/src/pages/bookings.jsx";
 import CartPage from "@/src/pages/cart.jsx";
@@ -16,11 +16,24 @@ import QrOrderPage from "@/src/pages/qr-order.jsx";
 import LoginPage from "@/src/pages/login.jsx";
 import SignupPage from "@/src/pages/signup.jsx";
 
+// Admin Pages - Add ALL these
+import AdminLayout from "@/src/admin/adminLayout/AdminLayout";
+import Dashboard from "@/src/admin/adminPages/Dashboard.jsx";
+import Orders from "@/src/admin/adminPages/Orders.jsx";
+import Bookings from "@/src/admin/adminPages/Bookings.jsx";
+import Customers from "@/src/admin/adminPages/Customers.jsx";
+import Settings from "@/src/admin/adminPages/Settings.jsx";
+import Inventory from "@/src/admin/adminPages/Inventory.jsx";
+import Categories from "@/src/admin/adminPages/Categories";
+import Payments from "@/src/admin/adminPages/Payments.jsx";
+import Offers from "@/src/admin/adminPages/Offers.jsx";
+
 export default function App() {
   return (
     <BrowserRouter>
       <CartProvider>
         <Routes>
+          {/* User Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/bookings" element={<BookingsPage />} />
           <Route path="/cart" element={<CartPage />} />
@@ -31,7 +44,23 @@ export default function App() {
           <Route path="/qr-order" element={<QrOrderPage />} />
           <Route path="/auth/login" element={<LoginPage />} />
           <Route path="/auth/signup" element={<SignupPage />} />
+
+          {/* Admin Routes - ADD THESE */}
+          <Route path="/admin" element={<AdminLayout />}>
+
+            <Route index element={<Dashboard />} />
+            <Route path="orders" element={<Orders />} />
+            <Route path="bookings" element={<Bookings />} />
+            <Route path="customers" element={<Customers />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="inventory" element={<Inventory />} />
+            <Route path="categories" element={<Categories />} />
+            <Route path="payments" element={<Payments />} />
+            <Route path="offers" element={<Offers />} />
+
+          </Route>
         </Routes>
+
         <Toaster position="top-right" theme="dark" />
       </CartProvider>
     </BrowserRouter>

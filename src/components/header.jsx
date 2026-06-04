@@ -27,7 +27,7 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <img
-              src="/logo.webp"
+              src="/Logo.webp"
               alt="Raj Restaurant"
               width={75}
               height={75}
