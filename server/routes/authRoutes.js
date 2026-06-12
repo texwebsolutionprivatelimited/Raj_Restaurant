@@ -11,7 +11,7 @@ router.post("/admin/login", async (req, res) => {
   try {
     const { email, password } = req.body;
     const admin = await Admin.findOne({ email });
-    
+
     if (admin && (await admin.comparePassword(password))) {
       res.json({
         _id: admin._id,
@@ -31,10 +31,13 @@ router.post("/admin/login", async (req, res) => {
 // Customer/User Register
 router.post("/register", async (req, res) => {
   try {
-    const { name, email,phone,  password } = req.body;
+    const { name, email, phone, password } = req.body;
 
     const customerExists = await Customer.findOne({
-      $or: [{ email , phone}],
+      $or: [
+        { email: email },
+        { phone: phone }
+      ],
     });
 
     if (customerExists) {
@@ -72,8 +75,8 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
-    const customer = await Customer.findOne({ $or: [{ email }]});
-    
+    const customer = await Customer.findOne({ $or: [{ email }] });
+
     if (customer && (await customer.comparePassword(password))) {
       res.json({
         _id: customer._id,
