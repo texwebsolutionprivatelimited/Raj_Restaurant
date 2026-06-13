@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Users, UtensilsCrossed, ChefHat, Award } from "lucide-react";
 
 export default function AboutSection() {
@@ -13,7 +14,12 @@ export default function AboutSection() {
 
       <div className="relative max-w-7xl mx-auto px-4">
         {/* Heading */}
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
           <p className="uppercase tracking-[8px] text-red-500 text-sm font-semibold mb-4">
             Welcome To Raj Restaurant
           </p>
@@ -26,10 +32,15 @@ export default function AboutSection() {
           </h2>
 
           <div className="w-24 h-1 bg-red-600 mx-auto mt-6 rounded-full" />
-        </div>
+        </motion.div>
 
         {/* Main Card */}
-        <div className="bg-gradient-to-br from-zinc-900 to-black border border-red-600/20 rounded-3xl p-8 md:p-14 shadow-2xl">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-gradient-to-br from-zinc-900 to-black border border-red-600/20 rounded-3xl p-8 md:p-14 shadow-2xl"
+        >
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
@@ -94,7 +105,7 @@ export default function AboutSection() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

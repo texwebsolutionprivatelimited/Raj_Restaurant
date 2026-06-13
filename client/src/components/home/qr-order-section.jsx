@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   QrCode,
   Smartphone,
@@ -16,7 +17,12 @@ export default function QROrderSection() {
       <div className="max-w-7xl mx-auto">
 
         {/* Heading */}
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
           <p className="uppercase tracking-[8px] text-red-500 text-sm font-semibold mb-4">
             Smart Dining Experience
           </p>
@@ -30,14 +36,18 @@ export default function QROrderSection() {
             Skip the wait and enjoy a modern dining experience.
             Scan, order and enjoy your favorite meals with ease.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
           {/* Left Side */}
           <div className="space-y-6">
-
-            <div className="bg-zinc-900 border border-red-600/20 rounded-3xl p-6">
+            <motion.div
+              initial={{ opacity: 0, x: -25 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="bg-zinc-900 border border-red-600/20 rounded-3xl p-6"
+            >
               <div className="flex gap-4">
                 <QrCode className="text-red-500 w-10 h-10" />
 
@@ -51,9 +61,14 @@ export default function QROrderSection() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="bg-zinc-900 border border-red-600/20 rounded-3xl p-6">
+            <motion.div
+              initial={{ opacity: 0, x: -25 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-zinc-900 border border-red-600/20 rounded-3xl p-6"
+            >
               <div className="flex gap-4">
                 <Smartphone className="text-red-500 w-10 h-10" />
 
@@ -67,9 +82,14 @@ export default function QROrderSection() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="bg-zinc-900 border border-red-600/20 rounded-3xl p-6">
+            <motion.div
+              initial={{ opacity: 0, x: -25 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-zinc-900 border border-red-600/20 rounded-3xl p-6"
+            >
               <div className="flex gap-4">
                 <UtensilsCrossed className="text-red-500 w-10 h-10" />
 
@@ -83,9 +103,14 @@ export default function QROrderSection() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="bg-zinc-900 border border-red-600/20 rounded-3xl p-6">
+            <motion.div
+              initial={{ opacity: 0, x: -25 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="bg-zinc-900 border border-red-600/20 rounded-3xl p-6"
+            >
               <div className="flex gap-4">
                 <CreditCard className="text-red-500 w-10 h-10" />
 
@@ -99,12 +124,17 @@ export default function QROrderSection() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
           </div>
 
           {/* Right Side */}
-          <div className="relative">
+          <motion.div
+            initial={{ opacity: 0, x: 25 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="relative"
+          >
 
             <div className="bg-gradient-to-br from-red-950/20 to-black border border-red-600/20 rounded-[40px] p-10 text-center">
 
@@ -122,7 +152,7 @@ export default function QROrderSection() {
               </p>
 
               <Link
-                to="/menu"
+                to="/qr-order"
                 className="inline-block bg-red-600 hover:bg-red-700 transition px-8 py-4 rounded-xl text-white font-semibold"
               >
                 Start Ordering
@@ -130,7 +160,7 @@ export default function QROrderSection() {
 
             </div>
 
-          </div>
+          </motion.div>
 
         </div>
       </div>
