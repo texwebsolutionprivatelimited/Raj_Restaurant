@@ -48,14 +48,13 @@ const events = [
       "Grand celebrations with customized menus and exceptional service.",
   },
 ];
-
-export default function TrendingSection() {
-  return (<section className="py-24 px-4 bg-black"> <div className="max-w-7xl mx-auto">
-
-    ```
-    {/* Heading */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
+export default function EventsSection() {
+  return (
+    <section className="py-24 px-4 bg-black">
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className="text-center mb-16"

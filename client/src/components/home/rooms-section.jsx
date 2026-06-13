@@ -1,9 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Wifi, Car, Coffee, Tv } from "lucide-react";
-
-<section id="rooms"></section>
-
 const rooms = [
   {
     name: "Deluxe Room",

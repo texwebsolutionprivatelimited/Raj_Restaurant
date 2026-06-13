@@ -7,6 +7,7 @@ import { Header } from "@/src/components/header";
 import { BannerSlider } from "@/src/components/banner-slider";
 import CategoriesSection from "@/src/components/home/categories-section";
 import EventsSection from "@/src/components/home/events-section";
+import TrendingSection from "@/src/components/home/trending-section";
 import StatsSection from "@/src/components/home/stats-section";
 import TestimonialsSection from "@/src/components/home/testimonials-section";
 import FeedbackCTA from "@/src/components/home/feedback-cta";
@@ -26,6 +27,7 @@ export default function Home() {
         <AboutSection />
         <CategoriesSection />
         <ProductListing />
+        <TrendingSection />
         <EventsSection />
         <QROrderSection />
         <RoomsSection />

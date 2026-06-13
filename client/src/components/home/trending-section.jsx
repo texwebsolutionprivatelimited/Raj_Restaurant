@@ -1,28 +1,32 @@
 "use client";
 
+import { useCart } from "@/src/context/cart-context";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 const trendingItems = [
   {
+    _id: "trending-1",
     name: "Butter Chicken",
-    price: "₹349",
+    price: 349,
     rating: "4.9",
     image:
       "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?q=80&w=2070&auto=format&fit=crop",
     badge: "Bestseller",
   },
   {
+    _id: "trending-2",
     name: "Paneer Tikka",
-    price: "₹279",
+    price: 279,
     rating: "4.8",
     image:
       "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?q=80&w=2070&auto=format&fit=crop",
     badge: "Popular",
   },
   {
+    _id: "trending-3",
     name: "Veg Biryani",
-    price: "₹299",
+    price: 299,
     rating: "4.7",
     image:
       "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?q=80&w=2070&auto=format&fit=crop",
@@ -31,6 +35,7 @@ const trendingItems = [
 ];
 
 export default function TrendingSection() {
+  const { addToCart } = useCart();
   return (
     <section className="py-20 px-4 bg-black">
       <div className="max-w-7xl mx-auto">
@@ -93,10 +98,13 @@ export default function TrendingSection() {
 
                 <div className="flex items-center justify-between">
                   <span className="text-2xl font-bold text-red-500">
-                    {item.price}
+                    ₹{item.price}
                   </span>
 
-                  <button className="bg-red-600 hover:bg-red-700 transition px-5 py-2 rounded-lg text-white font-semibold">
+                  <button
+                    onClick={() => addToCart(item)}
+                    className="bg-red-600 hover:bg-red-700 transition px-5 py-2 rounded-lg text-white font-semibold"
+                  >
                     Add to Cart
                   </button>
                 </div>
